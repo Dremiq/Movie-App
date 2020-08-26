@@ -1,0 +1,9 @@
+export const SEARCH_MOVIE = "SEARCH_MOVIE";
+export const FETCH_MOVIES = "FETCH_MOVIES";
+export const FETCH_POPULAR = "FETCH_POPULAR";
+export const FETCH_TOP_RATED = "FETCH_TOP_RATED";
+export const FETCH_MOVIE = "FETCH_MOVIE";
+export const FETCH_SIMILAR = "FETCH_SIMILAR";
+export const LOADING = "LOADING";
+export const NEW_LOADING = "NEW_LOADING";
+export const NEW_NEW_LOADING = "NEW_NEW_LOADING";
