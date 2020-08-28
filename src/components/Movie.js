@@ -7,6 +7,7 @@ import arrBack from "../assets/arrBackMovieDetails.png";
 import "../styles/Movie.scss";
 import MovieCard from "./MovieCard";
 import Spinner from "./Spinner";
+
 const Movie = (props) => {
   const { movie, loading } = props;
   const { similarMovies } = props;

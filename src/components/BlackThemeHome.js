@@ -14,7 +14,6 @@ import { Link } from "react-router-dom";
 import PopularMovies from "./PopularMovies";
 import FetchedMovies from "./FetchedMovies";
 import TopRatedMovies from "./TopRatedMovies";
-import Footer from "./Footer";
 import Spinner from "./Spinner";
 const BlackThemeHome = (props) => {
   const [isActive, setIsActive] = useState(true);
@@ -40,11 +39,16 @@ const BlackThemeHome = (props) => {
     setAbc(0);
     props.history.push("/bT/searched");
     e.target.reset();
+    setIsActive(false);
+    setIsActiveTwo(false);
   };
   const { movies, newnewloading } = props;
   let moviePages = [];
   for (let i = 1; i < movies.total_pages + 1; i++) {
     moviePages.push(i);
+  }
+  if (window.location == "/bT") {
+    window.location = "/bT/popular";
   }
   let BTHInfo = (
     <div className="black-div">
@@ -88,7 +92,6 @@ const BlackThemeHome = (props) => {
       <Route path="/bT/popular" exact component={PopularMovies} />
       <Route path="/bT/searched" exact component={FetchedMovies} />
       <Route path="/bT/top_rated" exact component={TopRatedMovies} />
-      {movies.total_results > 0 ? <Footer /> : <p></p>}
     </div>
   );
 

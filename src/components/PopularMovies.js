@@ -7,6 +7,8 @@ import smallArrLeft from "../assets/smallarrleft.png";
 import smallArrRight from "../assets/smallarrright.png";
 import Spinner from "./Spinner";
 
+import Footer from "./Footer";
+
 const PopularMovies = (props) => {
   const [abc, setAbc] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
@@ -127,6 +129,7 @@ const PopularMovies = (props) => {
         )}
       </div>
       <div></div>
+      {props.movies != "" ? <Footer /> : <div></div>}
     </div>
   );
   return <div>{newloading ? <Spinner /> : PMInfo}</div>;

@@ -14,6 +14,8 @@ import {
 import "../styles/MovieCard.scss";
 import Spinner from "./Spinner";
 
+import Footer from "./Footer";
+
 function FetchedMovies(props) {
   const [abc, setAbc] = useState(0);
   const { movies, newloading } = props;
@@ -133,6 +135,7 @@ function FetchedMovies(props) {
         )}
       </div>
       <div></div>
+      {movies.total_results > 0 ? <Footer /> : <div></div>}
     </div>
   );
 

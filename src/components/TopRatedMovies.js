@@ -9,6 +9,8 @@ import smallArrRight from "../assets/smallarrright.png";
 // import arrowRight from "../assets/arrowRight.png";
 import Spinner from "./Spinner";
 
+import Footer from "./Footer";
+
 const TopRatedMovies = (props) => {
   const [abc, setAbc] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
@@ -133,6 +135,7 @@ const TopRatedMovies = (props) => {
         </div>
         <div></div>
       </div>
+      {props.movies != "" ? <Footer /> : <div></div>}
     </div>
   );
   return <div>{newloading ? <Spinner /> : <div>{TRMInfo}</div>}</div>;

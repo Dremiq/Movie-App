@@ -4,6 +4,7 @@ $orbitron: "Orbitron", sans-serif;
 @import url("https://fonts.googleapis.com/css2?family=Karla&display=swap");
 $karla: "Karla", sans-serif;
 $white: #ffffff;
+$black: #252525;
 
 body {
   background-color: #171717;
@@ -40,6 +41,7 @@ body {
     width: 920px;
   }
 }
+
 .search-img {
   z-index: 2;
   margin-right: -26px;
@@ -75,6 +77,7 @@ body {
     letter-spacing: 0.5px;
   }
 }
+
 .btn1 {
   margin-right: 50px;
 }
@@ -87,11 +90,13 @@ body {
   background-color: white;
   color: black;
 }
+
 .btnFalse {
   border-bottom: 1px solid white;
   background: transparent;
   color: white;
 }
+
 .test-div {
   margin-bottom: 20px;
   font-family: $karla;

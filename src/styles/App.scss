@@ -4,6 +4,7 @@ $orbitron: "Orbitron", sans-serif;
 @import url("https://fonts.googleapis.com/css2?family=Karla&display=swap");
 $karla: "Karla", sans-serif;
 $white: #ffffff;
+$black: #171717;
 
 * {
   margin: 0px;
@@ -45,6 +46,7 @@ $white: #ffffff;
     color: white;
   }
 }
+
 .unable-to-find {
   color: white;
   width: 100%;
