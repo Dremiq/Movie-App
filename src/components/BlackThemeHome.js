@@ -37,7 +37,7 @@ const BlackThemeHome = (props) => {
     setIsActiveTwo(true);
   };
 
- // Gives the value of the input to the action which later fetches movies based on that value
+  // Gives the value of the input to the action which later fetches movies based on that value
 
   const handleChange = (e) => {
     props.searchMovie(e.target.value);
@@ -51,8 +51,10 @@ const BlackThemeHome = (props) => {
     setIsActive(false);
     setIsActiveTwo(false);
   };
+
   const { movies, newnewloading } = props;
   let moviePages = [];
+
   for (let i = 1; i < movies.total_pages + 1; i++) {
     moviePages.push(i);
   }
