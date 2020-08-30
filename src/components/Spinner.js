@@ -1,6 +1,6 @@
 import React from "react";
 import SpinnerGIF from "../assets/spinner.gif";
-import "../styles/App.scss";
+import "../styles/Spinner.scss";
 const Spinner = () => {
   return (
     <div className="spinner-div">

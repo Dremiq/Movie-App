@@ -12,6 +12,7 @@ import Footer from "./Footer";
 const PopularMovies = (props) => {
   const [abc, setAbc] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
+
   useEffect(() => {
     props.fetchPopular(1);
   }, []);
@@ -20,34 +21,28 @@ const PopularMovies = (props) => {
   const popularRes = popular.results;
   let popularPages = [];
 
+  // Gets the number of total pages fetched and stores them into a variable
+
   for (let i = 1; i < popular.total_pages + 1; i++) {
     popularPages.push(i);
   }
 
-  // const handleSliderUp = () => {
-  //   if (abc >= (popular.total_pages / 10) * 550 - 550) {
-  //   } else {
-  //     setAbc(abc + 550);
-  //   }
-  // };
-  // const handleSliderDown = () => {
-  //   if (abc <= 0) {
-  //   } else {
-  //     setAbc(abc - 550);
-  //   }
-  // };
+  // handleSmallSliderUp and handleSmallSliderDown make the bottom page number slider work
+
   const handleSmallSliderUp = () => {
     if (abc >= (popular.total_pages / 10) * 550 - 55) {
     } else {
       setAbc(abc + 55);
     }
   };
+
   const handleSmallSliderDown = () => {
     if (abc <= 0) {
     } else {
       setAbc(abc - 55);
     }
   };
+
   let PMInfo = (
     <div>
       <div className="movies-div">
@@ -60,9 +55,6 @@ const PopularMovies = (props) => {
       <div className="test-div">
         {props.movies != "" ? (
           <div className="buttonsPrev">
-            {/* <button className="prevBtn sliderBtn" onClick={handleSliderDown}>
-        <img src={arrowLeft} alt="arrow-left" />
-      </button> */}
             <button
               className="smallPrevBtn smallSliderBtn"
               onClick={handleSmallSliderDown}
@@ -120,9 +112,6 @@ const PopularMovies = (props) => {
             >
               <img src={smallArrRight} alt="small-arrow-right" />
             </button>
-            {/* <button className="nextBtn sliderBtn" onClick={handleSliderUp}>
-        <img src={arrowRight} alt="arrow-right" />
-      </button> */}
           </div>
         ) : (
           ""

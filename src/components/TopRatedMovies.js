@@ -5,8 +5,6 @@ import MovieCard from "./MovieCard";
 import "../styles/MovieCard.scss";
 import smallArrLeft from "../assets/smallarrleft.png";
 import smallArrRight from "../assets/smallarrright.png";
-// import arrowLeft from "../assets/arrowLeft.png";
-// import arrowRight from "../assets/arrowRight.png";
 import Spinner from "./Spinner";
 
 import Footer from "./Footer";
@@ -17,28 +15,21 @@ const TopRatedMovies = (props) => {
 
   useEffect(() => {
     props.setNewLoading();
-
     props.fetchTopRated(1);
   }, []);
+
   const { TopRated, newloading } = props;
   const TopRatedRes = TopRated.results;
   let TopRatedPages = [];
 
+  // Gets the number of total pages fetched and stores them into a variable
+
   for (let i = 1; i < TopRated.total_pages + 1; i++) {
     TopRatedPages.push(i);
   }
-  // const handleSliderUp = () => {
-  //   if (abc >= (TopRated.total_pages / 10) * 550 - 550) {
-  //   } else {
-  //     setAbc(abc + 550);
-  //   }
-  // };
-  // const handleSliderDown = () => {
-  //   if (abc <= 0) {
-  //   } else {
-  //     setAbc(abc - 550);
-  //   }
-  // };
+
+  // handleSmallSliderUp and handleSmallSliderDown make the bottom page number slider work
+
   const handleSmallSliderUp = () => {
     if (abc >= (TopRated.total_pages / 10) * 550 - 55) {
     } else {
@@ -65,9 +56,6 @@ const TopRatedMovies = (props) => {
         <div className="test-div">
           {props.movies != "" ? (
             <div className="buttonsPrev">
-              {/* <button className="prevBtn sliderBtn" onClick={handleSliderDown}>
-          <img src={arrowLeft} alt="arrow-left" />
-        </button> */}
               <button
                 className="smallPrevBtn smallSliderBtn"
                 onClick={handleSmallSliderDown}
@@ -125,9 +113,6 @@ const TopRatedMovies = (props) => {
               >
                 <img src={smallArrRight} alt="small-arrow-right" />
               </button>
-              {/* <button className="nextBtn sliderBtn" onClick={handleSliderUp}>
-          <img src={arrowRight} alt="arrow-right" />
-        </button> */}
             </div>
           ) : (
             ""

@@ -11,12 +11,17 @@ import {
 } from "./actionTypes";
 import axios from "axios";
 import { API_KEY } from "../../API_KEY";
+
+// Fetches movies that are being searched for in the input
+
 export const searchMovie = (text) => {
   return {
     type: SEARCH_MOVIE,
     payload: text,
   };
 };
+
+// Fetches front page movies
 
 export const fetchMovies = (text, page) => (dispatch) => {
   axios
@@ -31,6 +36,8 @@ export const fetchMovies = (text, page) => (dispatch) => {
     )
     .catch((err) => console.log(err));
 };
+
+
 
 export const fetchPopular = (page) => (dispatch) => {
   axios
@@ -59,6 +66,8 @@ export const fetchTopRated = (page) => (dispatch) => {
     )
     .catch((err) => console.log(err));
 };
+
+// Fetches a single movie when you click on it for more details
 
 export const fetchMovie = (id) => (dispatch) => {
   axios

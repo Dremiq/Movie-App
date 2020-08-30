@@ -8,6 +8,8 @@ import "../styles/Movie.scss";
 import MovieCard from "./MovieCard";
 import Spinner from "./Spinner";
 
+// Once clicked on a specific movie card this component loads up and gives all the details about that movie
+
 const Movie = (props) => {
   const { movie, loading } = props;
   const { similarMovies } = props;
@@ -21,22 +23,19 @@ const Movie = (props) => {
 
   let simRes = similarMovies.results;
 
+  // Makes similar movie cards clickable
+  
   const handleSwap = (e) => {
     e.preventDefault();
     window.location.reload();
   };
-  // const handleBack = () => {
-  //   window.history.back();
-  // };
+
   console.log(simRes);
   let movieInfo = (
     <div>
       <div className="movie-details">
         <div className="bg-div">
           <div className="navbar">
-            {/* <div className="arrBack-div" onClick={handleBack}>
-              <img src={arrBack} />
-            </div> */}
             <div className="logo">
               <Link to="/bT/popular" href="#" className="logo-title">
                 KROST
@@ -125,16 +124,7 @@ const Movie = (props) => {
               </div>
             </div>
           </div>
-          {/* {movie.title} */}
-          {/* <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} /> */}
         </div>
-        {/* <div className="sim-title">Similar movies</div>
-
-      <div className="similar-movies-div" onClick={handleSwap}>
-        {simRes != undefined
-          ? simRes.map((item, index) => <MovieCard movie={item} key={index} />)
-          : console.log("h")}
-      </div> */}
       </div>
       <div className="sim-title">Similar movies</div>
 
