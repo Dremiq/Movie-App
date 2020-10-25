@@ -48,7 +48,7 @@ const TopRatedMovies = (props) => {
       <div>
         <div className="movies-div">
           {TopRatedRes === undefined
-            ? console.log("loading movies")
+            ? console.log("loading movies...")
             : TopRatedRes.map((movie, index) => (
                 <MovieCard movie={movie} key={index} />
               ))}

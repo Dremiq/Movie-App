@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./styles/App.scss";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import BlackThemeHome from "./components/BlackThemeHome";

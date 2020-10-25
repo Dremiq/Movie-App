@@ -14,7 +14,6 @@ $karla: "Karla", sans-serif;
 .oneMovie {
   width: 250px;
   height: 420px;
-  margin-bottom: 50px;
   font-family: $karla;
   cursor: pointer;
   position: relative;
@@ -22,12 +21,10 @@ $karla: "Karla", sans-serif;
 
   text-decoration: none;
   transition: all 0.3s ease;
-
   &:hover {
     transform: scale(1.05);
-    background-color: rgba(black, 0.5);
-    letter-spacing: 1px;
-    .moviePoster {
+    .movieTitle {
+      letter-spacing: 1px;
     }
   }
 }
@@ -35,15 +32,17 @@ $karla: "Karla", sans-serif;
   background-color: red;
 }
 .movieTitle {
+  transition: all 0.3s ease;
   display: flex;
   justify-content: center;
   width: 100%;
+  padding: 0px 10px 0px 10px;
   align-items: center;
-  height: 40px;
-  font-size: 16px;
+  font-size: 14px;
   color: white;
   text-transform: uppercase;
   text-align: center;
+  margin-top: 5px;
 }
 .moviePoster {
   width: 250px;

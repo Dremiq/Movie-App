@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { fetchMovie, fetchSimilar, setLoading } from "../redux/actions/actions";
 import star from "../assets/star.png";
-import arrBack from "../assets/arrBackMovieDetails.png";
 import "../styles/Movie.scss";
 import MovieCard from "./MovieCard";
 import Spinner from "./Spinner";
@@ -30,7 +29,6 @@ const Movie = (props) => {
     window.location.reload();
   };
 
-  console.log(simRes);
   let movieInfo = (
     <div>
       <div className="movie-details">
@@ -66,7 +64,7 @@ const Movie = (props) => {
                     ? movie.genres.map((item, index) => (
                         <p key={index}>{item.name}</p>
                       ))
-                    : console.log("br")}
+                    : console.log("Could not find genres for this specific movie...")}
                 </div>
               </div>
 
@@ -81,7 +79,7 @@ const Movie = (props) => {
                     ? movie.spoken_languages.map((language, index) => (
                         <p key={index}>{language.name}</p>
                       ))
-                    : console.log("err")}
+                    : console.log("Could not find spoken languages for this specific movie...")}
                 </div>
               </div>
               <div className="movie-storyline">
@@ -95,7 +93,7 @@ const Movie = (props) => {
                     ? movie.production_companies.map((company, index) => (
                         <p key={index}>{company.name}</p>
                       ))
-                    : console.log("err")}
+                    : console.log("Could not find production companies for this specific movie...")}
                 </div>
               </div>
               <div className="movie-watch">
@@ -131,14 +129,14 @@ const Movie = (props) => {
       <div className="similar-movies-div" onClick={handleSwap}>
         {simRes != undefined
           ? simRes.map((item, index) => <MovieCard movie={item} key={index} />)
-          : console.log("h")}
+          : console.log("Could not fetch movies...")}
 
         {simRes === undefined || simRes.length == 0 ? (
           <div className="similar-help-div">
             <p>Unable to find any similar movies</p>
           </div>
         ) : (
-          console.log("false")
+          console.log("Similar movies found...")
         )}
       </div>
     </div>
